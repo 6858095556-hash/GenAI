@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal AI Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">✳</span><div><strong>LocalMind</strong><small>YOUR PERSONAL AI</small></div></div>
+      <div class="side-heading">YOUR KNOWLEDGE</div>
+      <button id="uploadButton" class="upload-card"><span class="plus">＋</span><span><b>Add documents</b><small>PDF, DOCX, TXT or MD</small></span></button>
+      <input id="fileInput" type="file" accept=".pdf,.docx,.txt,.md" hidden>
+      <div class="doc-label">LIBRARY <span id="docCount">0</span></div>
+      <div id="documents" class="documents"><div class="empty-library">Your documents will appear here.</div></div>
+      <div class="sidebar-bottom"><span class="status-dot"></span> Private · stored on this device</div>
+    </aside>
+    <main>
+      <header><div><div class="eyebrow">PERSONAL KNOWLEDGE ASSISTANT</div><h1>Ask your documents.</h1><p>Answers grounded in the files you share.</p></div><div class="model-pill"><span class="status-dot"></span> Local model</div></header>
+      <section id="welcome" class="welcome"><div class="welcome-icon">✳</div><h2>Your knowledge, ready to explore.</h2><p>Add a document to get started. I’ll find relevant passages and answer questions using your files.</p><button id="welcomeUpload" class="primary">＋ &nbsp; Add your first document</button><div class="formats">PDF <i>·</i> DOCX <i>·</i> TXT <i>·</i> MD</div></section>
+      <section id="conversation" class="conversation" hidden></section>
+      <form id="askForm" class="composer"><textarea id="question" rows="1" placeholder="Ask a question about your documents…" required></textarea><button id="sendButton" type="submit" aria-label="Send">↑</button><div class="composer-hint">Answers are generated locally from your uploaded documents</div></form>
+      <div id="toast" class="toast" role="status"></div>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
